@@ -231,14 +231,14 @@ Class Action {
 
 	function add_to_cart(){
 		extract($_POST);
-		$data = " product_id = $pid ";	
+		$data = " product_id = '$pid' ";	
 		$qty = isset($qty) ? $qty : 1 ;
-		$data .= ", qty = $qty ";
+		$data .= ", qty = '$qty' ";
 		if(isset($_SESSION['login_user_id'])){
 			$data .= ", user_id = '".$_SESSION['login_user_id']."' ";	
 		}else{
 			$ip = isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] : isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
-			$data .= ", client_ip = '".$ip."' ";	
+			$data .= ", client_ip = '$ip' ";	
 
 		}
 		$save = $this->db->query("INSERT INTO cart set ".$data);
@@ -249,11 +249,11 @@ Class Action {
 	function get_cart_count(){
 		extract($_POST);
 		if(isset($_SESSION['login_user_id'])){
-			$where =" where user_id = '".$_SESSION['login_user_id']."'  ";
+			$where =" WHERE user_id = '".$_SESSION['login_user_id']."'  ";
 		}
 		else{
 			$ip = isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] : isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
-			$where =" where client_ip = '$ip'  ";
+			$where =" WHERE client_ip = '$ip'  ";
 		}
 		$get = $this->db->query("SELECT sum(qty) as cart FROM cart ".$where);
 		if($get->num_rows > 0){
@@ -265,7 +265,7 @@ Class Action {
 
 	function update_cart_qty(){
 		extract($_POST);
-		$data = " qty = $qty ";
+		$data = " qty = '$qty' ";
 		$save = $this->db->query("UPDATE cart set ".$data." where id = ".$id);
 		if($save)
 			return 1;	

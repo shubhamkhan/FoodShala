@@ -174,3 +174,14 @@ td p {
     transform: rotate(360deg);
   }
 }
+
+/*--------------------------------------------------------------
+# Top navbar button
+--------------------------------------------------------------*/
+.navbar-nav .dropdown-menu{
+  position: absolute;
+}
+.navbar-nav .dropdown-toggle:focus{
+  outline: none;
+  box-shadow:none;
+}

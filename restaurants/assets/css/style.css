@@ -78,7 +78,7 @@ nav#sidebar {
   position: fixed;
   z-index: 99;
   left: 0;
-  width: 250px;
+  width: 20%;
 }
 #sidebar .collapse a {
   text-indent: 50px;
@@ -173,4 +173,15 @@ td p {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/*--------------------------------------------------------------
+# Top navbar button
+--------------------------------------------------------------*/
+.navbar-nav .dropdown-menu{
+  position: absolute;
+}
+.navbar-nav .dropdown-toggle:focus{
+  outline: none;
+  box-shadow:none;
 }

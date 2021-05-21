@@ -1,74 +1,75 @@
 <?php include('db_connect.php');?>
 
 <div class="container-fluid">
-	
-	<div class="col-lg-12">
-		<div class="row">
-			<!-- FORM Panel -->
-			<div class="col-md-4">
-			<form action="" id="manage-category">
-				<div class="card">
-					<div class="card-header">
-						    Category Form
-				  	</div>
-					<div class="card-body">
-							<input type="hidden" name="id">
-							<div class="form-group">
-								<label class="control-label">Category</label>
-								<input type="text" class="form-control" name="name">
-							</div>
-					</div>
-							
-					<div class="card-footer">
-						<div class="row">
-							<div class="col-md-12">
-								<button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
-								<button class="btn btn-sm btn-default col-sm-3" type="button" onclick="$('#manage-category').get(0).reset()"> Cancel</button>
+	<div class="row m-3">
+		<div class="col-lg-12">
+			<div class="row">
+				<!-- FORM Panel -->
+				<div class="col-md-4 p-2">
+				<form action="" id="manage-category">
+					<div class="card">
+						<div class="card-header">
+								Category Form
+						</div>
+						<div class="card-body">
+								<input type="hidden" name="id">
+								<div class="form-group">
+									<label class="control-label">Category</label>
+									<input type="text" class="form-control" name="name">
+								</div>
+						</div>
+								
+						<div class="card-footer">
+							<div class="row">
+								<div class="col-md-12">
+									<button type="button" class="btn btn-sm btn-primary col-sm-4 offset-md-3"> Save</button>
+									<button type="button" class="btn btn-sm btn-secondary col-sm-4" onclick="$('#manage-category').get(0).reset()"> Cancel</button>
+								</div>
 							</div>
 						</div>
 					</div>
+				</form>
 				</div>
-			</form>
-			</div>
-			<!-- FORM Panel -->
+				<!-- FORM Panel -->
 
-			<!-- Table Panel -->
-			<div class="col-md-8">
-				<div class="card">
-					<div class="card-body">
-						<table class="table table-bordered table-hover text-center">
-							<thead>
-								<tr>
-									<th class="text-center">#</th>
-									<th class="text-center">Name</th>
-									<th class="text-center">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-								$i = 1;
-								$cats = $conn->query("SELECT * FROM category_list order by id asc");
-								while($row=$cats->fetch_assoc()):
-								?>
-								<tr>
-									<td class="text-center"><?php echo $i++ ?></td>
-									<td class="">
-										<?php echo $row['name'] ?>
-									</td>
-									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_cat" type="button" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" >Edit</button>
-										<button class="btn btn-sm btn-danger delete_cat" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
-									</td>
-								</tr>
-								<?php endwhile; ?>
-							</tbody>
-						</table>
+				<!-- Table Panel -->
+				<div class="col-md-8">
+					<div class="card">
+						<div class="card-body">
+							<table class="table table-bordered table-hover text-center">
+								<thead>
+									<tr>
+										<th class="text-center">#</th>
+										<th class="text-center">Name</th>
+										<th class="text-center">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php 
+									$i = 1;
+									$cats = $conn->query("SELECT * FROM category_list order by id asc");
+									while($row=$cats->fetch_assoc()):
+									?>
+									<tr>
+										<td class="text-center"><?php echo $i++ ?></td>
+										<td class="">
+											<?php echo $row['name'] ?>
+										</td>
+										<td class="text-center">
+											<button class="btn btn-sm btn-primary edit_cat" type="button" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" >Edit</button>
+											<button class="btn btn-sm btn-danger delete_cat" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+										</td>
+									</tr>
+									<?php endwhile; ?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
+				<!-- Table Panel -->
 			</div>
-			<!-- Table Panel -->
 		</div>
-	</div>	
+	</div>
 </div>
 <script>
 $('#manage-category').submit(function(e){

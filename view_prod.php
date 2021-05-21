@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php 
 include'admin/db_connect.php';
 $qry = $conn->query("SELECT * FROM  product_list where id = ".$_GET['id'])->fetch_array();
@@ -8,8 +9,6 @@ $qry = $conn->query("SELECT * FROM  product_list where id = ".$_GET['id'])->fetc
 		<div class="card-body">
 			<h5 class="card-title"><?php echo $qry['name'] ?></h5>
 			<p class="card-text truncate"><?php echo $qry['description'] ?></p>
-			<div class="form-group">
-			</div>
 			<div class="row">
 				<div class="col-md-2"><label class="control-label">Qty</label></div>
 					<div class="input-group col-md-7 mb-3">
@@ -22,6 +21,7 @@ $qry = $conn->query("SELECT * FROM  product_list where id = ".$_GET['id'])->fetc
 						</div>
 					</div>
 				</div>
+			</div>
 			<div class="text-center">
 				<button class="btn btn-outline-primary btn-sm btn-block" id="add_to_cart_modal"><i class="fa fa-cart-plus"></i> Add to Cart</button>
 			</div>

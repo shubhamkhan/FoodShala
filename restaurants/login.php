@@ -1,18 +1,18 @@
+<?php session_start();
+if(isset($_SESSION['rlogin_id']))
+	header("location:index.php?page=home");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Restaurants | Food Shala</title>
  	
 <?php include('header.php'); ?>
 <?php include('../admin/db_connect.php'); ?>
 <?php 
-session_start();
-if(isset($_SESSION['rlogin_id']))
-	header("location:index.php?page=home");
-
 $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
 		foreach ($query as $key => $value) {
 			if(!is_numeric($key))

@@ -1,39 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<title>Food Shala</title> 
 <?php
-	session_start();
-  if(!isset($_SESSION['alogin_id']))
-    header('location:login.php');
-    include('header.php'); 
- ?>
-
-</head>
-<body>
-<?php include 'topbar.php' ?>
+session_start();
+if(!isset($_SESSION['alogin_id'])){
+  SESSION_DESTROY();
+  unset($_SESSION);
+  header("location:login.php");
+}
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <?php include('header.php'); ?>
+  </head>
+  <body>
+    
+  <?php include('topbar.php'); ?>
 
   <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body text-white">
     </div>
   </div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <?php include 'navbar.php' ?>
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<div class="container">
+  <div class="row">
+    
+    <?php include('navbar.php'); ?>
 
-        <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
-        <?php include $page.'.php' ?>
-
-      </main>
-    </div>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
+      <?php include $page.'.php' ?>
+    </main>
+    
   </div>
+</div>
 
   <div id="preloader"></div>
 
-<div class="modal fade" id="confirm_modal" role='dialog'>
+  <div class="modal fade" id="confirm_modal" role='dialog'>
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">

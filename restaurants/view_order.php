@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <div class="container-fluid">
 	
 	<table class="table table-bordered text-center">
@@ -12,7 +13,6 @@
 			<?php 
 			$total = 0;
 			include '../admin/db_connect.php';
-			session_start();
 			$qry = $conn->query("SELECT * FROM order_list o inner join product_list p on o.product_id = p.id where order_id = '".$_GET['id']."' and p.user_id = '".$_SESSION['rlogin_id']."' ");
 			while($row=$qry->fetch_assoc()):
 				$total += $row['qty'] * $row['price'];

@@ -1,7 +1,7 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
 include('header.php');
 include('admin/db_connect.php');
 
@@ -61,7 +61,7 @@ div.cover {
       <h1 class="display-4 fw-bold">Welcome to <?php echo $_SESSION['setting_name']; ?></h1>
       <div class="col-lg-6 mx-auto">
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-            <a href="../FoodShala/#menu" class="btn btn-warning btn-xl px-4">Order Now</a>
+            <a href="#menu" class="btn btn-warning btn-xl px-4">Order Now</a>
           </div>
       </div>
   </div>

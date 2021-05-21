@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="menu">
   <div class="row h-100 align-items-center justify-content-center text-center">
       <div class="align-self-end mb-4 page-title">
           <h3>Checkout</h3>

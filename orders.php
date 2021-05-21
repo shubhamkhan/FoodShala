@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" id="menu">
 	<div class="card">
-		<div class="card-body">
-			<table class="table table-bordered">
+		<div class="card-body table-responsive">
+			<table class="table table-bordered text-center">
 				<thead>
 					<tr>
 						<th>#</th>

@@ -8,38 +8,43 @@ if($qry->num_rows > 0){
 }
 ?>
 <div class="container-fluid">
-	
-	<div class="card col-lg-12">
-		<div class="card-body">
-			<form action="" id="manage-settings">
-				<div class="form-group">
-					<label for="name" class="control-label">Restaurant Name</label>
-					<input type="text" class="form-control" id="name" name=   "name" value="<?php echo isset($meta['name']) ? $meta['name'] : '' ?>" required>
+	<div class="row m-3">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="card">
+					<div class="card-body">
+						<form action="" id="manage-settings">
+							<div class="form-group">
+								<label for="name" class="control-label">Restaurant Name</label>
+								<input type="text" class="form-control" id="name" name=   "name" value="<?php echo isset($meta['name']) ? $meta['name'] : '' ?>" required>
+							</div>
+							<div class="form-group">
+								<label for="email" class="control-label">Email</label>
+								<input type="email" class="form-control" id="email" name="email" value="<?php echo isset($meta['email']) ? $meta['email'] : '' ?>" required>
+							</div>
+							<div class="form-group">
+								<label for="contact" class="control-label">Contact</label>
+								<input type="text" class="form-control" id="contact" name="contact" value="<?php echo isset($meta['contact']) ? $meta['contact'] : '' ?>" required>
+							</div>
+							<div class="form-group">
+								<label for="about" class="control-label">About Content</label>
+								<textarea name="about" class="text-jqte"><?php echo isset($meta['about_content']) ? $meta['about_content'] : '' ?></textarea>
+							</div>
+							<div class="form-group">
+								<label for="" class="control-label">Image</label>
+								<input type="file" class="form-control" name="img" onchange="displayImg(this,$(this))">
+							</div>
+							<div class="form-group">
+								<img src="<?php echo isset($meta['cover_img']) ? '../assets/img/'.$meta['cover_img'] :'' ?>" alt="" id="cimg">
+							</div>
+							<input type="hidden" id="u_id" name="u_id" value="<?php echo $_SESSION['rlogin_id'] ?>" class="form-control">
+							<div class="text-center">
+								<button class="btn btn-info btn-primary btn-block col-md-2">Save</button>
+							</div>
+						</form>
+					</div>
 				</div>
-				<div class="form-group">
-					<label for="email" class="control-label">Email</label>
-					<input type="email" class="form-control" id="email" name="email" value="<?php echo isset($meta['email']) ? $meta['email'] : '' ?>" required>
-				</div>
-				<div class="form-group">
-					<label for="contact" class="control-label">Contact</label>
-					<input type="text" class="form-control" id="contact" name="contact" value="<?php echo isset($meta['contact']) ? $meta['contact'] : '' ?>" required>
-				</div>
-				<div class="form-group">
-					<label for="about" class="control-label">About Content</label>
-					<textarea name="about" class="text-jqte"><?php echo isset($meta['about_content']) ? $meta['about_content'] : '' ?></textarea>
-				</div>
-				<div class="form-group">
-					<label for="" class="control-label">Image</label>
-					<input type="file" class="form-control" name="img" onchange="displayImg(this,$(this))">
-				</div>
-				<div class="form-group">
-					<img src="<?php echo isset($meta['cover_img']) ? '../assets/img/'.$meta['cover_img'] :'' ?>" alt="" id="cimg">
-				</div>
-				<input type="hidden" id="u_id" name="u_id" value="<?php echo $_SESSION['rlogin_id'] ?>" class="form-control">
-				<div class="text-center">
-					<button class="btn btn-info btn-primary btn-block col-md-2">Save</button>
-				</div>
-			</form>
+			</div>
 		</div>
 	</div>
 </div>

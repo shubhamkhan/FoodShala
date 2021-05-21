@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,6 @@
  	
     <?php include('../admin/header.php'); ?>
     <?php include('../admin/db_connect.php'); ?>
-    <?php session_start() ?>
 </head>
 <body>
 <main id="main" class=" bg-dark">

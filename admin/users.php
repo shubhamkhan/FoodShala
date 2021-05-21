@@ -1,11 +1,11 @@
 <div class="container-fluid">
-	<div class="row">
+	<div class="row m-3">
 		<div class="card col-lg-12">
-			<div class="card-body">
+			<div class="card-body table-responsive">
 				<div class="col-lg-12">
 					<h2> Admin and Restaurant User </h2>
 				</div>
-				<table class="table-striped table-bordered col-md-12 text-center">
+				<table class="table table-bordered text-center">
 					<thead>
 						<tr>
 							<th class="text-center">#</th>
@@ -35,11 +35,11 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="card-body">
+			<div class="card-body table-responsive">
 				<div class="col-lg-12">
 					<h2> Common User </h2>
 				</div>
-				<table class="table-striped table-bordered col-md-12 text-center">
+				<table class="table table-bordered text-center">
 					<thead>
 						<tr>
 							<th class="text-center">#</th>
