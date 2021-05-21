@@ -23,29 +23,27 @@
 Admin
 ----------------------------------------
 Link: http://localhost/FoodShala/admin/
-user: admin@gmail.com
-pass: 12345
+
+1. admin@gmail.com/12345
+
 ----------------------------------------
 
 Restaurants
 ----------------------------------------------
 Link: http://localhost/FoodShala/restaurants/
-user1: vk@gmail.com
-pass1: 12345
 
-user2: hpl@gmail.com
-pass2: 54321
+1. vk@gmail.com/12345
+2. hpl@gmail.com/pass2: 54321
+
 ----------------------------------------------
 
 Customers
 ----------------------------------
 Link: http://localhost/FoodShala/
-user1: shubham@gmail.com
-pass1: 12345
 
-user2: bikash@gmail.com
-pass2: 12345
+1. shubham@gmail.com/12345
+2. bikash@gmail.com/pass2: 12345
+
 ---------------------------------
 
-If you have any doubt send me email:
-shubhamkhanit@gmail.com
+If you have any doubt: http://shubhamkhan.github.io/
