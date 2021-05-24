@@ -195,6 +195,7 @@ Class Action {
 		if($delete)
 			return 1;
 	}
+	
 	function save_menu(){
 		extract($_POST);
 		$data = " name = '$name' ";
@@ -238,8 +239,7 @@ Class Action {
 			$data .= ", user_id = '".$_SESSION['login_user_id']."' ";	
 		}else{
 			$ip = isset($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_CLIENT_IP'] : isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
-			$data .= ", client_ip = '$ip' ";	
-
+			$data .= ", client_ip = '$ip' ";
 		}
 		$save = $this->db->query("INSERT INTO cart set ".$data);
 		if($save)
